@@ -7,8 +7,9 @@ services:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: new_base
+      MYSQL_USER: acp4pogynvaeidfj
+      MYSQL_PASSWORD: jc31d2qyy7h9jv5jn1u9uosjksxzaizw
+      MYSQL_DATABASE: dd
 
   web:
     build: .
@@ -17,9 +18,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - MYSQL_NAME=new_base
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=root
+      - MYSQL_NAME=dd
+      - MYSQL_USER=acp4pogynvaeidfj
+      - MYSQL_PASSWORD=jc31d2qyy7h9jv5jn1u9uosjksxzaizw
     depends_on:
       - db
 
