@@ -7,7 +7,6 @@ RUN cd /tmp && tar xvfz tomcat.tar.gz
 RUN cp -Rv /tmp/apache-tomcat-9.0.58/* /usr/local/tomcat/
 RUN git clone https://github.com/htmldav/dz12.git
 RUN cd dz12 && mvn package
-RUN ["cp",  "/dz12/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war", "/usr/local/tomcat/webapps/"]
-# RUN mv /dz12/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
+RUN cp /dz12/target/App42PaaS-Java-MySQL-Sample-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 EXPOSE 8080
 CMD /usr/local/tomcat/bin/catalina.sh run
