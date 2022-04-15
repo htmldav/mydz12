@@ -2,9 +2,9 @@ FROM ubuntu:16.04
 RUN apt-get -y update
 RUN apt-get -y install openjdk-8-jdk wget maven git
 RUN mkdir /usr/local/tomcat
-RUN wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.58/bin/apache-tomcat-9.0.58.tar.gz -O /tmp/tomcat.tar.gz
+RUN wget https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.96/bin/apache-tomcat-7.0.96.tar.gz -O /tmp/tomcat.tar.gz
 RUN cd /tmp && tar xvfz tomcat.tar.gz
-RUN cp -Rv /tmp/apache-tomcat-9.0.58/* /usr/local/tomcat/
+RUN cp -Rv /tmp/apache-tomcat-7.0.96/* /usr/local/tomcat/
 RUN git clone https://github.com/htmldav/dz12.git
 RUN cd dz12 && mvn package
 # RUN mv -T /dz12/WebContent /dz12/ROOT
