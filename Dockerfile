@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-# RUN apt-get -y update
+RUN apt-get -y update
 RUN apt-get -y install openjdk-8-jdk wget maven git
 RUN mkdir /usr/local/tomcat
 RUN wget https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.96/bin/apache-tomcat-7.0.96.tar.gz -O /tmp/tomcat.tar.gz
